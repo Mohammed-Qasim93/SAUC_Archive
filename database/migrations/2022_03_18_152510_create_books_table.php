@@ -18,7 +18,6 @@ class CreateBooksTable extends Migration
             $table->string('name');
             $table->string('desc');
             $table->string('status');
-            $table->bigInteger('users_id')->unsigned();
             $table->bigInteger('units_id')->unsigned();
             $table->foreign('units_id')->references('id')->on('units')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
