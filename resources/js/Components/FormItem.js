@@ -11,7 +11,7 @@ const formItem = ({
     handleChange,
 }) => {
     return (
-        <div class="relative z-0 mb-6 w-full group">
+        <div className="relative z-0 mb-6 w-full group">
             <Input
                 type={type}
                 name={name}
@@ -24,7 +24,7 @@ const formItem = ({
             <Label
                 forHtml={forInput}
                 value={label}
-                className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-right peer-focus:right-0 peer-focus:text-primary-dark peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-right peer-focus:right-0 peer-focus:text-primary-dark peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 opacity-50 peer-focus:scale-75 peer-focus:-translate-y-6"
             />
         </div>
     );
