@@ -3,7 +3,6 @@
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\UnitsController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
@@ -28,6 +27,5 @@ Route::middleware('admin')->group(function () {
     Route::get('users/edit', [Controller::class, 'uedit'])->name('users.edit');
     Route::put('users/update', [Controller::class, 'uupdate']);
     Route::delete('users/delete', [Controller::class, 'delete']);
-    Route::Resource('units', UnitsController::class);
 });
 
