@@ -2819,7 +2819,7 @@ function ValidationErrors(_ref) {
     className: "mb-4",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "font-medium text-red-600",
-      children: "Whoops! Something went wrong."
+      children: "\u0647\u0646\u0627\u0644\u0643 \u062E\u0637\u0627!"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
       className: "mt-3 list-disc list-inside text-sm text-red-600",
       children: Object.keys(errors).map(function (key, index) {
