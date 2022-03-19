@@ -25,6 +25,6 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('admin')->group(function () {
     Route::get('users', [Controller::class, 'index'])->name('users.index');
-    Route::resources('units', [UnitsController::class]);
+    Route::Resource('units', UnitsController::class);
 });
 
