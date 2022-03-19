@@ -2146,7 +2146,7 @@ function Button(_ref) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
     onClick: handleClick,
     type: type,
-    className: "".concat(primary ? "bg-primary-default text-dark hover:bg-primary-dark" : "bg-secondary-default border-2 hover:bg-secondary-dark", " ").concat(processing && "opacity-25", " inline-block px-4 py-2 rounded-md outline-none focus:outline-none"),
+    className: "".concat(primary ? "bg-primary-default text-dark hover:bg-primary-dark" : "bg-secondary-default  hover:bg-secondary-dark", " ").concat(processing && "opacity-25", " inline-block px-4 py-2 rounded-md outline-none focus:outline-none"),
     disabled: processing,
     children: children
   });
@@ -3023,11 +3023,9 @@ function Register() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
           type: "button",
           handleClick: handleClick,
-          className: "underline text-sm text-primary-default rounded-md bg-muted inline-block py-2 px-4",
           children: "\u0631\u062C\u0648\u0639"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
           primary: true,
-          className: "ml-4 block",
           processing: processing,
           children: "\u062A\u0633\u062C\u064A\u0644"
         })]

@@ -73,19 +73,11 @@ export default function Register() {
                 />
 
                 <div className="flex items-center justify-around mt-4">
-                    <Button
-                        type="button"
-                        handleClick={handleClick}
-                        className="underline text-sm text-primary-default rounded-md bg-muted inline-block py-2 px-4"
-                    >
+                    <Button type="button" handleClick={handleClick}>
                         رجوع
                     </Button>
 
-                    <Button
-                        primary
-                        className="ml-4 block"
-                        processing={processing}
-                    >
+                    <Button primary processing={processing}>
                         تسجيل
                     </Button>
                 </div>

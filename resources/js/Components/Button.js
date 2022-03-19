@@ -15,7 +15,7 @@ export default function Button({
             className={`${
                 primary
                     ? "bg-primary-default text-dark hover:bg-primary-dark"
-                    : "bg-secondary-default border-2 hover:bg-secondary-dark"
+                    : "bg-secondary-default  hover:bg-secondary-dark"
             } ${
                 processing && "opacity-25"
             } inline-block px-4 py-2 rounded-md outline-none focus:outline-none`}
