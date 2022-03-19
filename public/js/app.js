@@ -3065,6 +3065,26 @@ function Guest(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Auth/Edit.js":
+/*!*****************************************!*\
+  !*** ./resources/js/Pages/Auth/Edit.js ***!
+  \*****************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Auth/Index.js":
+/*!******************************************!*\
+  !*** ./resources/js/Pages/Auth/Index.js ***!
+  \******************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Auth/Login.js":
 /*!******************************************!*\
   !*** ./resources/js/Pages/Auth/Login.js ***!
@@ -67198,6 +67218,10 @@ module.exports = function getSideChannel() {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./Auth/Edit": "./resources/js/Pages/Auth/Edit.js",
+	"./Auth/Edit.js": "./resources/js/Pages/Auth/Edit.js",
+	"./Auth/Index": "./resources/js/Pages/Auth/Index.js",
+	"./Auth/Index.js": "./resources/js/Pages/Auth/Index.js",
 	"./Auth/Login": "./resources/js/Pages/Auth/Login.js",
 	"./Auth/Login.js": "./resources/js/Pages/Auth/Login.js",
 	"./Auth/Register": "./resources/js/Pages/Auth/Register.js",

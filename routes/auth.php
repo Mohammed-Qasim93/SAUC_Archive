@@ -25,6 +25,9 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('admin')->group(function () {
     Route::get('users', [Controller::class, 'index'])->name('users.index');
+    Route::get('users/edit', [Controller::class, 'uedit'])->name('users.edit');
+    Route::put('users/update', [Controller::class, 'uupdate']);
+    Route::delete('users/delete', [Controller::class, 'delete']);
     Route::Resource('units', UnitsController::class);
 });
 
