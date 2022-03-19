@@ -15,42 +15,61 @@ export default function Authenticated({ auth, header, children }) {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
                         <div className="flex">
-                            <div className="shrink-0 flex items-center">
-                                <Link href="/">
-                                    <ApplicationLogo className="block h-10 w-auto text-gray-500" />
-                                </Link>
-                            </div>
-
-                            <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink
-                                    href={route("dashboard")}
-                                    active={route().current("dashboard")}
+                            <div className="shrink-0 flex gap-x-2 items-center">
+                                <Link
+                                    href="/"
+                                    className="shrink-0 flex gap-x-2 items-center"
                                 >
-                                    لوحة التحكم
-                                </NavLink>
+                                    <ApplicationLogo className="block h-10 w-auto text-gray-500" />
+                                    <span className="">
+                                        نظام الارشيف - كلية شط العرب الجامعة
+                                    </span>
+                                </Link>
                             </div>
                         </div>
 
                         <div className="hidden sm:flex sm:items-center sm:ml-6">
-                            <div className=" justify-between  gap-x-2 bg-red-50 flex">
+                            <div className=" justify-between  gap-x-2  flex">
+                                {auth.user.role == 1 ? (
+                                    <NavLink
+                                        href="/logs"
+                                        active={route().current("/logs")}
+                                    >
+                                        السجل
+                                    </NavLink>
+                                ) : null}
+                                {auth.user.role == 1 ? (
+                                    <NavLink
+                                        href={`/users`}
+                                        active={route().current("/users")}
+                                    >
+                                        المستخدمين
+                                    </NavLink>
+                                ) : null}
                                 <NavLink
-                                    href={route("dashboard")}
+                                    href={`/dashboard`}
                                     active={route().current("dashboard")}
                                 >
                                     لوحة التحكم
                                 </NavLink>
-                                <NavLink
-                                    href={route("dashboard")}
-                                    active={route().current("dashboard")}
-                                >
-                                    لوحة التحكم
-                                </NavLink>
-                                <NavLink
-                                    href={route("dashboard")}
-                                    active={route().current("dashboard")}
-                                >
-                                    لوحة التحكم
-                                </NavLink>
+                                {auth.user.role == 0 ? (
+                                    <>
+                                        <NavLink
+                                            href={"/sent"}
+                                            active={route().current("/sent")}
+                                        >
+                                            الصادره
+                                        </NavLink>
+                                        <NavLink
+                                            href={`/received`}
+                                            active={route().current(
+                                                "/received"
+                                            )}
+                                        >
+                                            الواردة
+                                        </NavLink>
+                                    </>
+                                ) : null}
                             </div>
                             <div className="ml-3 relative">
                                 <Dropdown>
@@ -84,7 +103,7 @@ export default function Authenticated({ auth, header, children }) {
                                             method="post"
                                             as="button"
                                         >
-                                            Log Out
+                                            خروج
                                         </Dropdown.Link>
                                     </Dropdown.Content>
                                 </Dropdown>
@@ -145,8 +164,40 @@ export default function Authenticated({ auth, header, children }) {
                             href={route("dashboard")}
                             active={route().current("dashboard")}
                         >
-                            Dashboard
+                            لوحة التحكم
                         </ResponsiveNavLink>
+                        {auth.user.role == 0 ? (
+                            <>
+                                <ResponsiveNavLink
+                                    href={route("dashboard")}
+                                    active={route().current("dashboard")}
+                                >
+                                    الصادره
+                                </ResponsiveNavLink>
+                                <ResponsiveNavLink
+                                    href={route("dashboard")}
+                                    active={route().current("dashboard")}
+                                >
+                                    الواردة
+                                </ResponsiveNavLink>
+                            </>
+                        ) : null}
+                        {auth.user.role == 1 ? (
+                            <ResponsiveNavLink
+                                href={route("dashboard")}
+                                active={route().current("dashboard")}
+                            >
+                                السجل
+                            </ResponsiveNavLink>
+                        ) : null}
+                        {auth.user.role == 1 ? (
+                            <ResponsiveNavLink
+                                href={route("dashboard")}
+                                active={route().current("dashboard")}
+                            >
+                                المستخدمين
+                            </ResponsiveNavLink>
+                        ) : null}
                     </div>
 
                     <div className="pt-4 pb-1 border-t border-gray-200">
@@ -165,7 +216,7 @@ export default function Authenticated({ auth, header, children }) {
                                 href={route("logout")}
                                 as="button"
                             >
-                                Log Out
+                                خروج
                             </ResponsiveNavLink>
                         </div>
                     </div>

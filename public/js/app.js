@@ -2236,29 +2236,29 @@ var Trigger = function Trigger(_ref2) {
 
 var Content = function Content(_ref3) {
   var _ref3$align = _ref3.align,
-      align = _ref3$align === void 0 ? 'right' : _ref3$align,
+      align = _ref3$align === void 0 ? "right" : _ref3$align,
       _ref3$width = _ref3.width,
-      width = _ref3$width === void 0 ? '48' : _ref3$width,
+      width = _ref3$width === void 0 ? "48" : _ref3$width,
       _ref3$contentClasses = _ref3.contentClasses,
-      contentClasses = _ref3$contentClasses === void 0 ? 'py-1 bg-white' : _ref3$contentClasses,
+      contentClasses = _ref3$contentClasses === void 0 ? "py-1 bg-white" : _ref3$contentClasses,
       children = _ref3.children;
 
   var _useContext2 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(DropDownContext),
       open = _useContext2.open,
       setOpen = _useContext2.setOpen;
 
-  var alignmentClasses = 'origin-top';
+  var alignmentClasses = "origin-top";
 
-  if (align === 'left') {
-    alignmentClasses = 'origin-top-left left-0';
-  } else if (align === 'right') {
-    alignmentClasses = 'origin-top-right right-0';
+  if (align === "left") {
+    alignmentClasses = "origin-top-left left-0";
+  } else if (align === "right") {
+    alignmentClasses = "origin-top-right right-0";
   }
 
-  var widthClasses = '';
+  var widthClasses = "";
 
-  if (width === '48') {
-    widthClasses = 'w-48';
+  if (width === "48") {
+    widthClasses = "w-48";
   }
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
@@ -2287,15 +2287,15 @@ var Content = function Content(_ref3) {
 var DropdownLink = function DropdownLink(_ref4) {
   var href = _ref4.href,
       _ref4$method = _ref4.method,
-      method = _ref4$method === void 0 ? 'post' : _ref4$method,
+      method = _ref4$method === void 0 ? "post" : _ref4$method,
       _ref4$as = _ref4.as,
-      as = _ref4$as === void 0 ? 'a' : _ref4$as,
+      as = _ref4$as === void 0 ? "a" : _ref4$as,
       children = _ref4.children;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
     href: href,
     method: method,
     as: as,
-    className: "block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out",
+    className: "block w-full px-4 py-2 text-right text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out",
     children: children
   });
 };
@@ -2459,7 +2459,7 @@ function NavLink(_ref) {
       children = _ref.children;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
     href: href,
-    className: active ? 'inline-flex items-center px-1 pt-1 border-b-2 border-indigo-400 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out' : 'inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out',
+    className: active ? "text-dark border-primary-dark px-1 py-2 border-b-2 inline-flex items-center font-medium leading-5 focus:outline-none  text-sm" : "inline-flex items-center px-1 py-2 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-muted focus:border-secondary-dark transition duration-150 ease-in-out",
     children: children
   });
 }
@@ -2485,9 +2485,9 @@ __webpack_require__.r(__webpack_exports__);
 
 function ResponsiveNavLink(_ref) {
   var _ref$method = _ref.method,
-      method = _ref$method === void 0 ? 'get' : _ref$method,
+      method = _ref$method === void 0 ? "get" : _ref$method,
       _ref$as = _ref.as,
-      as = _ref$as === void 0 ? 'a' : _ref$as,
+      as = _ref$as === void 0 ? "a" : _ref$as,
       href = _ref.href,
       _ref$active = _ref.active,
       active = _ref$active === void 0 ? false : _ref$active,
@@ -2496,7 +2496,7 @@ function ResponsiveNavLink(_ref) {
     method: method,
     as: as,
     href: href,
-    className: "w-full flex items-start pl-3 pr-4 py-2 border-l-4 ".concat(active ? 'border-indigo-400 text-indigo-700 bg-indigo-50 focus:outline-none focus:text-indigo-800 focus:bg-indigo-100 focus:border-indigo-700' : 'border-transparent text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300', " text-base font-medium focus:outline-none transition duration-150 ease-in-out"),
+    className: "w-full flex items-start pl-3 pr-4 py-2 border-l-4 ".concat(active ? "text-dark border-primary-dark focus:outline-none focus:text-primary-default focus:bg-muted " : "border-transparent text-muted hover:text-dark hover:bg-default hover:border-secondary-dark", " text-base font-medium focus:outline-none transition duration-150 ease-in-out"),
     children: children
   });
 }
@@ -2577,6 +2577,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function Authenticated(_ref) {
   var auth = _ref.auth,
       header = _ref.header,
@@ -2595,41 +2596,48 @@ function Authenticated(_ref) {
         className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
           className: "flex justify-between h-16",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
             className: "flex",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-              className: "shrink-0 flex items-center",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.Link, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+              className: "shrink-0 flex gap-x-2 items-center",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.Link, {
                 href: "/",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_ApplicationLogo__WEBPACK_IMPORTED_MODULE_1__["default"], {
+                className: "shrink-0 flex gap-x-2 items-center",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_ApplicationLogo__WEBPACK_IMPORTED_MODULE_1__["default"], {
                   className: "block h-10 w-auto text-gray-500"
-                })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+                  className: "",
+                  children: "\u0646\u0638\u0627\u0645 \u0627\u0644\u0627\u0631\u0634\u064A\u0641 - \u0643\u0644\u064A\u0629 \u0634\u0637 \u0627\u0644\u0639\u0631\u0628 \u0627\u0644\u062C\u0627\u0645\u0639\u0629"
+                })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-              className: "hidden space-x-8 sm:-my-px sm:ml-10 sm:flex",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_NavLink__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                href: route("dashboard"),
-                active: route().current("dashboard"),
-                children: "\u0644\u0648\u062D\u0629 \u0627\u0644\u062A\u062D\u0643\u0645"
-              })
-            })]
+            })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
             className: "hidden sm:flex sm:items-center sm:ml-6",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-              className: " justify-between  gap-x-2 bg-red-50 flex",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_NavLink__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                href: route("dashboard"),
+              className: " justify-between  gap-x-2  flex",
+              children: [auth.user.role == 1 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_NavLink__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                href: "/logs",
+                active: route().current("/logs"),
+                children: "\u0627\u0644\u0633\u062C\u0644"
+              }) : null, auth.user.role == 1 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_NavLink__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                href: "/users",
+                active: route().current("/users"),
+                children: "\u0627\u0644\u0645\u0633\u062A\u062E\u062F\u0645\u064A\u0646"
+              }) : null, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_NavLink__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                href: "/dashboard",
                 active: route().current("dashboard"),
                 children: "\u0644\u0648\u062D\u0629 \u0627\u0644\u062A\u062D\u0643\u0645"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_NavLink__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                href: route("dashboard"),
-                active: route().current("dashboard"),
-                children: "\u0644\u0648\u062D\u0629 \u0627\u0644\u062A\u062D\u0643\u0645"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_NavLink__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                href: route("dashboard"),
-                active: route().current("dashboard"),
-                children: "\u0644\u0648\u062D\u0629 \u0627\u0644\u062A\u062D\u0643\u0645"
-              })]
+              }), auth.user.role == 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_NavLink__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                  href: "/sent",
+                  active: route().current("/sent"),
+                  children: "\u0627\u0644\u0635\u0627\u062F\u0631\u0647"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_NavLink__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                  href: "/received",
+                  active: route().current("/received"),
+                  children: "\u0627\u0644\u0648\u0627\u0631\u062F\u0629"
+                })]
+              }) : null]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
               className: "ml-3 relative",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_Components_Dropdown__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -2657,7 +2665,7 @@ function Authenticated(_ref) {
                     href: route("logout"),
                     method: "post",
                     as: "button",
-                    children: "Log Out"
+                    children: "\u062E\u0631\u0648\u062C"
                   })
                 })]
               })
@@ -2695,13 +2703,31 @@ function Authenticated(_ref) {
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
         className: (showingNavigationDropdown ? "block" : "hidden") + " sm:hidden",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
           className: "pt-2 pb-3 space-y-1",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_ResponsiveNavLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_ResponsiveNavLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
             href: route("dashboard"),
             active: route().current("dashboard"),
-            children: "Dashboard"
-          })
+            children: "\u0644\u0648\u062D\u0629 \u0627\u0644\u062A\u062D\u0643\u0645"
+          }), auth.user.role == 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_ResponsiveNavLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              href: route("dashboard"),
+              active: route().current("dashboard"),
+              children: "\u0627\u0644\u0635\u0627\u062F\u0631\u0647"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_ResponsiveNavLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              href: route("dashboard"),
+              active: route().current("dashboard"),
+              children: "\u0627\u0644\u0648\u0627\u0631\u062F\u0629"
+            })]
+          }) : null, auth.user.role == 1 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_ResponsiveNavLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            href: route("dashboard"),
+            active: route().current("dashboard"),
+            children: "\u0627\u0644\u0633\u062C\u0644"
+          }) : null, auth.user.role == 1 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_ResponsiveNavLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            href: route("dashboard"),
+            active: route().current("dashboard"),
+            children: "\u0627\u0644\u0645\u0633\u062A\u062E\u062F\u0645\u064A\u0646"
+          }) : null]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
           className: "pt-4 pb-1 border-t border-gray-200",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
@@ -2719,7 +2745,7 @@ function Authenticated(_ref) {
               method: "post",
               href: route("logout"),
               as: "button",
-              children: "Log Out"
+              children: "\u062E\u0631\u0648\u062C"
             })
           })]
         })]
