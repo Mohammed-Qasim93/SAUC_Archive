@@ -5,7 +5,7 @@ import Card from "@/Components/Card";
 import { BiExport, BiImport } from "react-icons/bi";
 import Table from "@/Components/Table";
 
-export default function Dashboard(props) {
+export default function Dashboard({ auth, errors }) {
     const cardInfo = [
         {
             icon: <BiExport className="w-20 h-16" />,
@@ -23,8 +23,8 @@ export default function Dashboard(props) {
 
     return (
         <Authenticated
-            auth={props.auth}
-            errors={props.errors}
+            auth={auth}
+            errors={errors}
             header={
                 <h2 className="font-semibold text-xl text-center text-gray-800 leading-tight">
                     لوحة التحكم
@@ -47,16 +47,18 @@ export default function Dashboard(props) {
                                 );
                             })}
                         </div>
-                        <div className="col-span-2 mt-10">
-                            <p className="text-center text-muted text-xl">
-                                الصادرة والواردة مؤخراً
-                            </p>
-                            <Table
-                                data={""}
-                                cols={["id", "name"]}
-                                arabicCols={["رقم", "الاسم"]}
-                            />
-                        </div>
+                        {auth.user.role == 0 ? (
+                            <div className="col-span-2 mt-10">
+                                <p className="text-center text-muted text-xl">
+                                    الصادرة والواردة مؤخراً
+                                </p>
+                                <Table
+                                    data={""}
+                                    cols={["id", "name"]}
+                                    arabicCols={["رقم", "الاسم"]}
+                                />
+                            </div>
+                        ) : null}
                     </div>
                 </div>
             </div>

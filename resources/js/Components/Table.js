@@ -4,7 +4,7 @@ import { BiEdit, BiTrash } from "react-icons/bi";
 import { useGlobalFilter } from "react-table/dist/react-table.development";
 // import GlobalFilter from "./GlobalFilter";
 
-const ReactTable = ({ data, cols, arabicCols }) => {
+const ReactTable = ({ data, cols, arabicCols, paginate }) => {
     const columns = useMemo(
         () =>
             data[0]
@@ -148,80 +148,82 @@ const ReactTable = ({ data, cols, arabicCols }) => {
                     })}
                 </tbody>
             </table>
-            <div className="max-w-2xl mt-8">
-                <div className="flex justify-between flex-row-reverse items-center">
-                    <span>
-                        صفحة{" "}
-                        <strong>
-                            {pageIndex + 1} من {pageOptions.length}
-                        </strong>{" "}
-                    </span>
-                    <div className="flex gap-x-3">
-                        <button
-                            className="bg-slate-700 hover:bg-slate-800 disabled:bg-slate-400 text-slate-100/90 p-2 rounded-lg"
-                            onClick={() => gotoPage(0)}
-                            disabled={!canPreviousPage}
-                        >
-                            {"<<"}
-                        </button>{" "}
-                        <button
-                            className="bg-slate-700 disabled:bg-slate-400 hover:bg-slate-800 text-slate-100 p-2 rounded-lg"
-                            onClick={() => {
-                                previousPage();
-                            }}
-                            disabled={!canPreviousPage}
-                        >
-                            &#x21E8;
-                        </button>
-                        <button
-                            disabled={!canNextPage}
-                            className="bg-slate-700 disabled:bg-slate-400 hover:bg-slate-800 text-slate-100 p-2 rounded-lg"
-                            onClick={() => {
-                                nextPage();
-                            }}
-                        >
-                            &#x21E6;
-                        </button>
-                        <button
-                            className="bg-slate-700 hover:bg-slate-800 disabled:bg-slate-400 text-slate-100/90 p-2 rounded-lg"
-                            onClick={() => gotoPage(pageCount - 1)}
-                            disabled={!canNextPage}
-                        >
-                            {">>"}
-                        </button>{" "}
-                    </div>
-                    <span>
-                        انتقل الى الصفحة :{" "}
-                        <input
-                            className="appearance-none   bg-gray-200 text-gray-700 border border-gray-200 rounded  leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            type="number"
-                            min={1}
-                            max={pageOptions.length}
-                            defaultValue={pageIndex + 1}
+            {paginate && (
+                <div className="max-w-2xl mt-8">
+                    <div className="flex justify-between flex-row-reverse items-center">
+                        <span>
+                            صفحة{" "}
+                            <strong>
+                                {pageIndex + 1} من {pageOptions.length}
+                            </strong>{" "}
+                        </span>
+                        <div className="flex gap-x-3">
+                            <button
+                                className="bg-primary-default hover:bg-primary-dark disabled:bg-default text-muted/90 p-2 rounded-lg"
+                                onClick={() => gotoPage(0)}
+                                disabled={!canPreviousPage}
+                            >
+                                {"<<"}
+                            </button>{" "}
+                            <button
+                                className="bg-primary-default  hover:bg-primary-dark disabled:bg-default text-muted/90 p-2 rounded-lg"
+                                onClick={() => {
+                                    previousPage();
+                                }}
+                                disabled={!canPreviousPage}
+                            >
+                                &#x21E8;
+                            </button>
+                            <button
+                                disabled={!canNextPage}
+                                className="bg-primary-default  hover:bg-primary-dark disabled:bg-default text-muted/90 p-2 rounded-lg"
+                                onClick={() => {
+                                    nextPage();
+                                }}
+                            >
+                                &#x21E6;
+                            </button>
+                            <button
+                                className="bg-primary-default  hover:bg-primary-dark disabled:bg-default text-muted/90 p-2 rounded-lg"
+                                onClick={() => gotoPage(pageCount - 1)}
+                                disabled={!canNextPage}
+                            >
+                                {">>"}
+                            </button>{" "}
+                        </div>
+                        <span>
+                            انتقل الى الصفحة :{" "}
+                            <input
+                                className="appearance-none inline-block px-3 py-2  text-muted/90 rounded  leading-tight focus:outline-none focus:bg-default focus:border-muted"
+                                type="number"
+                                min={1}
+                                max={pageOptions.length}
+                                defaultValue={pageIndex + 1}
+                                onChange={(e) => {
+                                    const page = e.target.value
+                                        ? Number(e.target.value) - 1
+                                        : 0;
+                                    gotoPage(page);
+                                }}
+                                style={{ width: "50px" }}
+                            />
+                        </span>{" "}
+                        <select
+                            value={pageSize}
                             onChange={(e) => {
-                                const page = e.target.value
-                                    ? Number(e.target.value) - 1
-                                    : 0;
-                                gotoPage(page);
+                                setPageSize(Number(e.target.value));
                             }}
-                            style={{ width: "50px" }}
-                        />
-                    </span>{" "}
-                    <select
-                        value={pageSize}
-                        onChange={(e) => {
-                            setPageSize(Number(e.target.value));
-                        }}
-                        className="appearance-none block py-3 bg-gray-200 text-gray-700 border border-gray-200 rounded  leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    >
-                        {[10, 20, 30, 40, 50].map((pageSize) => (
-                            <option key={pageSize} value={pageSize}>
-                                إعرض {pageSize}
-                            </option>
-                        ))}
-                    </select>
+                            className="appearance-none block py-2  text-muted/90 rounded  leading-tight focus:outline-none focus:bg-default focus:border-muted"
+                        >
+                            {[10, 20, 30, 40, 50].map((pageSize) => (
+                                <option key={pageSize} value={pageSize}>
+                                    إعرض {pageSize}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
                 </div>
-            </div>
+            )}
         </>
     );
 };

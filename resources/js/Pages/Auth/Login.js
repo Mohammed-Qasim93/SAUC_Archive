@@ -5,6 +5,7 @@ import Checkbox from "@/Components/Checkbox";
 import ValidationErrors from "@/Components/ValidationErrors";
 import { Head, useForm } from "@inertiajs/inertia-react";
 import FormItem from "@/Components/FormItem";
+import { Inertia } from "@inertiajs/inertia";
 
 export default function Login({ status }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -34,6 +35,10 @@ export default function Login({ status }) {
                 ? event.target.checked
                 : event.target.value
         );
+    };
+
+    const handleClick = () => {
+        Inertia.get("/register");
     };
 
     const submit = (e) => {
@@ -87,9 +92,16 @@ export default function Login({ status }) {
                     </label>
                 </div>
 
-                <div className="flex items-center justify-end mt-4">
-                    <Button primary className="ml-4" processing={processing}>
+                <div className="flex items-center justify-around mt-4">
+                    <Button primary processing={processing}>
                         دخول
+                    </Button>
+                    <Button
+                        type="button"
+                        handleClick={handleClick}
+                        processing={processing}
+                    >
+                        إنشاء حساب
                     </Button>
                 </div>
             </form>

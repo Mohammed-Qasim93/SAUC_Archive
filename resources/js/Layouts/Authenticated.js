@@ -9,6 +9,10 @@ export default function Authenticated({ auth, header, children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
 
+    const isActive = (path) => {
+        return path === window.location.pathname;
+    };
+
     return (
         <div className="min-h-screen bg-gray-100">
             <nav className="bg-white border-b border-gray-100">
@@ -33,7 +37,7 @@ export default function Authenticated({ auth, header, children }) {
                                 {auth.user.role == 1 ? (
                                     <NavLink
                                         href="/logs"
-                                        active={route().current("/logs")}
+                                        active={isActive("/logs")}
                                     >
                                         السجل
                                     </NavLink>
@@ -41,30 +45,25 @@ export default function Authenticated({ auth, header, children }) {
                                 {auth.user.role == 1 ? (
                                     <NavLink
                                         href={`/users`}
-                                        active={route().current("/users")}
+                                        active={isActive("/users")}
                                     >
                                         المستخدمين
                                     </NavLink>
                                 ) : null}
-                                <NavLink
-                                    href={`/dashboard`}
-                                    active={route().current("dashboard")}
-                                >
+                                <NavLink href={`/`} active={isActive("/")}>
                                     لوحة التحكم
                                 </NavLink>
                                 {auth.user.role == 0 ? (
                                     <>
                                         <NavLink
                                             href={"/sent"}
-                                            active={route().current("/sent")}
+                                            active={isActive("/sent")}
                                         >
                                             الصادره
                                         </NavLink>
                                         <NavLink
                                             href={`/received`}
-                                            active={route().current(
-                                                "/received"
-                                            )}
+                                            active={isActive("/received")}
                                         >
                                             الواردة
                                         </NavLink>
@@ -160,23 +159,20 @@ export default function Authenticated({ auth, header, children }) {
                     }
                 >
                     <div className="pt-2 pb-3 space-y-1">
-                        <ResponsiveNavLink
-                            href={route("dashboard")}
-                            active={route().current("dashboard")}
-                        >
+                        <ResponsiveNavLink href={"/"} active={isActive("/")}>
                             لوحة التحكم
                         </ResponsiveNavLink>
                         {auth.user.role == 0 ? (
                             <>
                                 <ResponsiveNavLink
-                                    href={route("dashboard")}
-                                    active={route().current("dashboard")}
+                                    href={`/sent`}
+                                    active={isActive("/sent")}
                                 >
                                     الصادره
                                 </ResponsiveNavLink>
                                 <ResponsiveNavLink
-                                    href={route("dashboard")}
-                                    active={route().current("dashboard")}
+                                    href={`/received`}
+                                    active={isActive("/received")}
                                 >
                                     الواردة
                                 </ResponsiveNavLink>
@@ -184,16 +180,16 @@ export default function Authenticated({ auth, header, children }) {
                         ) : null}
                         {auth.user.role == 1 ? (
                             <ResponsiveNavLink
-                                href={route("dashboard")}
-                                active={route().current("dashboard")}
+                                href={`/users`}
+                                active={isActive("/users")}
                             >
                                 السجل
                             </ResponsiveNavLink>
                         ) : null}
                         {auth.user.role == 1 ? (
                             <ResponsiveNavLink
-                                href={route("dashboard")}
-                                active={route().current("dashboard")}
+                                href={`/users`}
+                                active={isActive("/users")}
                             >
                                 المستخدمين
                             </ResponsiveNavLink>
