@@ -14,6 +14,26 @@ module.exports = {
             fontFamily: {
                 sans: ["Nunito", ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                default: "#f6f6f6",
+                dark: "#111111",
+                muted: "#2f2f2f",
+                primary: {
+                    default: "#ffcb74",
+                    dark: "#ffb854",
+                },
+                secondary: {
+                    default: "#efefef",
+                    dark: "#dfdfdf",
+                },
+            },
+            fontFamily: {
+                "tajawal-regular": "Tajawal-Regular",
+                "tajawal-bold": "Tajawal-Bold",
+                "tajawal-Black": "Tajawal-Black",
+                "tajawal-light": "Tajawal-Light",
+                "tajawal-extrabold": "Tajawal-ExtraBold",
+            },
         },
     },
 
