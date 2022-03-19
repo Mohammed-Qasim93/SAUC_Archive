@@ -2,8 +2,18 @@ import Table from "@/Components/Table";
 import Authenticated from "@/Layouts/Authenticated";
 import React from "react";
 
-const Index = ({ auth, errors, users }) => {
+const Index = ({ auth, errors, users, column }) => {
     console.log(users);
+    let rows = [];
+    const generatedRows = users.map((user) => {
+        return {
+            id: user.id,
+            name: user.name,
+        };
+    });
+
+    rows = [...generatedRows];
+    const cols = Object.keys(column);
     return (
         <Authenticated
             auth={auth}
@@ -21,8 +31,8 @@ const Index = ({ auth, errors, users }) => {
                             <div className="col-span-2 mt-10">
                                 <Table
                                     data={users}
-                                    cols={["id", "name"]}
-                                    arabicCols={["رقم", "الاسم"]}
+                                    cols={cols}
+                                    arabicCols={column}
                                     paginate
                                 />
                             </div>
