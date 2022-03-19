@@ -47,7 +47,10 @@ export default function Dashboard(props) {
                                 );
                             })}
                         </div>
-                        <div className="col-span-2">
+                        <div className="col-span-2 mt-10">
+                            <p className="text-center text-muted text-xl">
+                                الصادرة والواردة مؤخراً
+                            </p>
                             <Table
                                 data={""}
                                 cols={["id", "name"]}
