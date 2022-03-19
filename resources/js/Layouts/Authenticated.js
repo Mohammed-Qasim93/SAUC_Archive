@@ -26,12 +26,32 @@ export default function Authenticated({ auth, header, children }) {
                                     href={route("dashboard")}
                                     active={route().current("dashboard")}
                                 >
-                                    Dashboard
+                                    لوحة التحكم
                                 </NavLink>
                             </div>
                         </div>
 
                         <div className="hidden sm:flex sm:items-center sm:ml-6">
+                            <div className=" justify-between  gap-x-2 bg-red-50 flex">
+                                <NavLink
+                                    href={route("dashboard")}
+                                    active={route().current("dashboard")}
+                                >
+                                    لوحة التحكم
+                                </NavLink>
+                                <NavLink
+                                    href={route("dashboard")}
+                                    active={route().current("dashboard")}
+                                >
+                                    لوحة التحكم
+                                </NavLink>
+                                <NavLink
+                                    href={route("dashboard")}
+                                    active={route().current("dashboard")}
+                                >
+                                    لوحة التحكم
+                                </NavLink>
+                            </div>
                             <div className="ml-3 relative">
                                 <Dropdown>
                                     <Dropdown.Trigger>

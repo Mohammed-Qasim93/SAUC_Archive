@@ -2610,12 +2610,27 @@ function Authenticated(_ref) {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_NavLink__WEBPACK_IMPORTED_MODULE_3__["default"], {
                 href: route("dashboard"),
                 active: route().current("dashboard"),
-                children: "Dashboard"
+                children: "\u0644\u0648\u062D\u0629 \u0627\u0644\u062A\u062D\u0643\u0645"
               })
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
             className: "hidden sm:flex sm:items-center sm:ml-6",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+              className: " justify-between  gap-x-2 bg-red-50 flex",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_NavLink__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                href: route("dashboard"),
+                active: route().current("dashboard"),
+                children: "\u0644\u0648\u062D\u0629 \u0627\u0644\u062A\u062D\u0643\u0645"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_NavLink__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                href: route("dashboard"),
+                active: route().current("dashboard"),
+                children: "\u0644\u0648\u062D\u0629 \u0627\u0644\u062A\u062D\u0643\u0645"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_NavLink__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                href: route("dashboard"),
+                active: route().current("dashboard"),
+                children: "\u0644\u0648\u062D\u0629 \u0627\u0644\u062A\u062D\u0643\u0645"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
               className: "ml-3 relative",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_Components_Dropdown__WEBPACK_IMPORTED_MODULE_2__["default"], {
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Dropdown__WEBPACK_IMPORTED_MODULE_2__["default"].Trigger, {
@@ -2646,7 +2661,7 @@ function Authenticated(_ref) {
                   })
                 })]
               })
-            })
+            })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
             className: "-mr-2 flex items-center sm:hidden",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
