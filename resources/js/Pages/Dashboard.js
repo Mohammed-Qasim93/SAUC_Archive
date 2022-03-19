@@ -1,20 +1,59 @@
-import React from 'react';
-import Authenticated from '@/Layouts/Authenticated';
-import { Head } from '@inertiajs/inertia-react';
+import React from "react";
+import Authenticated from "@/Layouts/Authenticated";
+import { Head } from "@inertiajs/inertia-react";
+import Card from "@/Components/Card";
+import { BiExport, BiImport } from "react-icons/bi";
+import Table from "@/Components/Table";
 
 export default function Dashboard(props) {
+    const cardInfo = [
+        {
+            icon: <BiExport className="w-20 h-20" />,
+            title: "تصدير البيانات",
+            description: "تصدير البيانات الخاصة بك",
+            link: "/sent",
+        },
+        {
+            icon: <BiImport className="w-20 h-20" />,
+            title: "استيراد البيانات",
+            description: "استيراد البيانات الخاصة بك",
+            link: "/received",
+        },
+    ];
+
     return (
         <Authenticated
             auth={props.auth}
             errors={props.errors}
-            header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Dashboard</h2>}
+            header={
+                <h2 className="font-semibold text-xl text-center text-gray-800 leading-tight">
+                    لوحة التحكم
+                </h2>
+            }
         >
-            <Head title="Dashboard" />
-
             <div className="py-12">
-                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 bg-white border-b border-gray-200">You're logged in!</div>
+                <div className="max-w-7xl mx-auto sm:px-6  lg:px-8">
+                    <div className="bg-white py-4 gap-4 px-4 grid grid-cols-2 items-center justify-center overflow-hidden shadow-sm sm:rounded-lg">
+                        <div className="col-span-2 flex gap-x-4">
+                            {cardInfo.map((card, index) => {
+                                return (
+                                    <Card
+                                        key={index}
+                                        icon={card.icon}
+                                        title={card.title}
+                                        description={card.description}
+                                        link={card.link}
+                                    />
+                                );
+                            })}
+                        </div>
+                        <div className="col-span-2">
+                            <Table
+                                data={""}
+                                cols={["id", "name"]}
+                                arabicCols={["رقم", "الاسم"]}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
