@@ -14,7 +14,9 @@ class UnitsController extends Controller
      */
     public function index()
     {
-        //
+        return Inseria::render('Units/Index', [
+            'units' => Units::all()
+        ]);
     }
 
     /**
