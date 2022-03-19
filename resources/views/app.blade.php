@@ -20,6 +20,7 @@
         @inertia
 
         @env ('local')
+        <!-- <script src="../path/to/flowbite/dist/flowbite.js"></script> -->
             <script src="http://localhost:8080/js/bundle.js"></script>
         @endenv
     </body>
