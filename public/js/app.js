@@ -3376,14 +3376,14 @@ __webpack_require__.r(__webpack_exports__);
 function Dashboard(props) {
   var cardInfo = [{
     icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_icons_bi__WEBPACK_IMPORTED_MODULE_6__.BiExport, {
-      className: "w-20 h-20"
+      className: "w-20 h-16"
     }),
     title: "تصدير البيانات",
     description: "تصدير البيانات الخاصة بك",
     link: "/sent"
   }, {
     icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_icons_bi__WEBPACK_IMPORTED_MODULE_6__.BiImport, {
-      className: "w-20 h-20"
+      className: "w-20 h-16"
     }),
     title: "استيراد البيانات",
     description: "استيراد البيانات الخاصة بك",

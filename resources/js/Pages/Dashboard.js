@@ -8,13 +8,13 @@ import Table from "@/Components/Table";
 export default function Dashboard(props) {
     const cardInfo = [
         {
-            icon: <BiExport className="w-20 h-20" />,
+            icon: <BiExport className="w-20 h-16" />,
             title: "تصدير البيانات",
             description: "تصدير البيانات الخاصة بك",
             link: "/sent",
         },
         {
-            icon: <BiImport className="w-20 h-20" />,
+            icon: <BiImport className="w-20 h-16" />,
             title: "استيراد البيانات",
             description: "استيراد البيانات الخاصة بك",
             link: "/received",
