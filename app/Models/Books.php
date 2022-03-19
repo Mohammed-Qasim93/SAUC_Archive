@@ -19,6 +19,10 @@ class Books extends Model
     
     use SoftDeletes;
     
+    public function images(){
+        return $this->morphMany(Images::class, 'img');
+    }
+
     public function users(){
         return $this->belongsToMany(User::class);
     }
