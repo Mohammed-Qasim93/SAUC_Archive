@@ -1,15 +1,16 @@
 import React, { useEffect } from "react";
 import Button from "@/Components/Button";
 import Guest from "@/Layouts/Guest";
-
+import Checkbox from "@/Components/Checkbox";
 import ValidationErrors from "@/Components/ValidationErrors";
 import { Head, useForm } from "@inertiajs/inertia-react";
 import FormItem from "@/Components/FormItem";
 
 export default function Login({ status }) {
     const { data, setData, post, processing, errors, reset } = useForm({
-        email: "",
+        name: "",
         password: "",
+        remember: "",
     });
 
     useEffect(() => {
@@ -19,6 +20,14 @@ export default function Login({ status }) {
     }, []);
 
     const handleChange = (event) => {
+        setData(
+            event.target.name,
+            event.target.type === "checkbox"
+                ? event.target.checked
+                : event.target.value
+        );
+    };
+    const onHandleChange = (event) => {
         setData(
             event.target.name,
             event.target.type === "checkbox"
@@ -64,8 +73,22 @@ export default function Login({ status }) {
                     handleChange={handleChange}
                 />
 
+                <div className="flex w-full items-center justify-between mt-4">
+                    <label className="flex items-center ">
+                        <Checkbox
+                            name="remember"
+                            value={data.remember}
+                            handleChange={onHandleChange}
+                        />
+
+                        <span className="mr-2 text-sm font-tajawal-light font-bold text-gray-600">
+                            تذكرني
+                        </span>
+                    </label>
+                </div>
+
                 <div className="flex items-center justify-end mt-4">
-                    <Button className="ml-4" processing={processing}>
+                    <Button primary className="ml-4" processing={processing}>
                         دخول
                     </Button>
                 </div>
