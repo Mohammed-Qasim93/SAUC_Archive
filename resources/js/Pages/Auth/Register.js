@@ -74,7 +74,7 @@ export default function Register() {
 
                 <div className="flex items-center justify-around mt-4">
                     <Button primary processing={processing}>
-                        تسجيل
+                        اضافة
                     </Button>
                     <Button type="button" handleClick={handleClick}>
                         رجوع

@@ -3396,7 +3396,7 @@ function Register() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
           primary: true,
           processing: processing,
-          children: "\u062A\u0633\u062C\u064A\u0644"
+          children: "\u0627\u0636\u0627\u0641\u0629"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
           type: "button",
           handleClick: handleClick,

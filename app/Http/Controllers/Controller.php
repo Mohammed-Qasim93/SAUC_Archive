@@ -17,16 +17,17 @@ class Controller extends BaseController
     public function index(){
         return Inertia::render('Auth/Index', [
             'users' => User::all(),
+            'column' => ['الاسم', 'الحالة', 'تاريخ الاضافة']
         ]);
     }
 
-    public function uedit($id){
+    public function edit($id){
         return Inertia::render('Auth/Edit', [
             'user' => User::findOrFail($id),
         ]);
     }
 
-    public function uupdate(Request $request, $id){
+    public function update(Request $request, $id){
         $user = User::findOrFail($id);
 
         if(($request->name !== $user->name) || ($request->password !== null) || ($request->role !== $user->role)){

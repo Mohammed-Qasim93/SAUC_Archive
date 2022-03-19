@@ -35,8 +35,14 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:25',
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        ],[
+            'name.required' => 'يجب ادخال اسم المستخدم',
+            'name.string' => 'اسم المستخدم غير صالح',
+            'name.max' => 'اسم المستخدم يجب ان لا يزيد عن 25 حرف',
+            'password.required' => 'يجب ادخال كلمة المرور',
+            'password.confirmed' => 'كلمة المرور غير متطابقة',
         ]);
 
         $user = User::create([
