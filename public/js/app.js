@@ -3029,6 +3029,36 @@ function Dashboard(props) {
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Units/Create.js":
+/*!********************************************!*\
+  !*** ./resources/js/Pages/Units/Create.js ***!
+  \********************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Units/Edit.js":
+/*!******************************************!*\
+  !*** ./resources/js/Pages/Units/Edit.js ***!
+  \******************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Units/Index.js":
+/*!*******************************************!*\
+  !*** ./resources/js/Pages/Units/Index.js ***!
+  \*******************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -58918,7 +58948,13 @@ var map = {
 	"./Auth/Register": "./resources/js/Pages/Auth/Register.js",
 	"./Auth/Register.js": "./resources/js/Pages/Auth/Register.js",
 	"./Dashboard": "./resources/js/Pages/Dashboard.js",
-	"./Dashboard.js": "./resources/js/Pages/Dashboard.js"
+	"./Dashboard.js": "./resources/js/Pages/Dashboard.js",
+	"./Units/Create": "./resources/js/Pages/Units/Create.js",
+	"./Units/Create.js": "./resources/js/Pages/Units/Create.js",
+	"./Units/Edit": "./resources/js/Pages/Units/Edit.js",
+	"./Units/Edit.js": "./resources/js/Pages/Units/Edit.js",
+	"./Units/Index": "./resources/js/Pages/Units/Index.js",
+	"./Units/Index.js": "./resources/js/Pages/Units/Index.js"
 };
 
 
