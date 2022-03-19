@@ -6,7 +6,7 @@ import ValidationErrors from "@/Components/ValidationErrors";
 import { Head, useForm } from "@inertiajs/inertia-react";
 import FormItem from "@/Components/FormItem";
 
-export default function Login({ status, canResetPassword }) {
+export default function Login({ status }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         email: "",
         password: "",
@@ -47,7 +47,7 @@ export default function Login({ status, canResetPassword }) {
 
             <form onSubmit={submit}>
                 <FormItem
-                    name="الاسم"
+                    name="name"
                     type="text"
                     label="الاسم"
                     placeholder=" "

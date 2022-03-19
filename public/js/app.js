@@ -2790,8 +2790,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Login(_ref) {
-  var status = _ref.status,
-      canResetPassword = _ref.canResetPassword;
+  var status = _ref.status;
 
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.useForm)({
     email: "",
@@ -2830,7 +2829,7 @@ function Login(_ref) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
       onSubmit: submit,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_FormItem__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        name: "\u0627\u0644\u0627\u0633\u0645",
+        name: "name",
         type: "text",
         label: "\u0627\u0644\u0627\u0633\u0645",
         placeholder: " ",
