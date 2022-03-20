@@ -10,9 +10,14 @@ const Index = ({ auth, errors, users, column }) => {
     const cols = Object.keys(column);
     const data = users.map((user) => {
         user.created_at = moment().format("DD/MM/YYYY");
-        user.last_seen = moment().fromNow();
+        user.last_seen =
+            moment().minutes() <
+            new Date().setMinutes(new Date().getMinutes() - 2)
+                ? "online"
+                : "offline";
         return user;
     });
+    console.log(data);
     return (
         <Authenticated
             auth={auth}

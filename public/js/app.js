@@ -3216,9 +3216,10 @@ var Index = function Index(_ref) {
   var cols = Object.keys(column);
   var data = users.map(function (user) {
     user.created_at = moment__WEBPACK_IMPORTED_MODULE_4___default()().format("DD/MM/YYYY");
-    user.last_seen = moment__WEBPACK_IMPORTED_MODULE_4___default()().fromNow();
+    user.last_seen = moment__WEBPACK_IMPORTED_MODULE_4___default()().minutes() < new Date().setMinutes(new Date().getMinutes() - 2) ? "online" : "offline";
     return user;
   });
+  console.log(data);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_2__["default"], {
     auth: auth,
     errors: errors,
