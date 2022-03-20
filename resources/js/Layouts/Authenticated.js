@@ -25,7 +25,7 @@ export default function Authenticated({ auth, header, children }) {
                                     className="shrink-0 flex gap-x-2 items-center"
                                 >
                                     <ApplicationLogo className="block h-10 w-auto text-gray-500" />
-                                    <span className="">
+                                    <span>
                                         نظام الارشيف - كلية شط العرب الجامعة
                                     </span>
                                 </Link>

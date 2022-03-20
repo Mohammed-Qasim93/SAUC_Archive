@@ -26,7 +26,7 @@ export default function Dashboard({ auth, errors }) {
             auth={auth}
             errors={errors}
             header={
-                <h2 className="font-semibold text-xl text-center text-gray-800 leading-tight">
+                <h2 className="font-semibold text-xl text-center text-muted leading-tight">
                     لوحة التحكم
                 </h2>
             }
