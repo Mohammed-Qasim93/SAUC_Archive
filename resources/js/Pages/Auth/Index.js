@@ -3,6 +3,7 @@ import Table from "@/Components/Table";
 import Authenticated from "@/Layouts/Authenticated";
 import { Link } from "@inertiajs/inertia-react";
 import { AiOutlineUserAdd } from "react-icons/ai";
+import { RiRadioButtonLine } from "react-icons/ri";
 import moment from "moment";
 import "moment/locale/ar-kw";
 
@@ -12,11 +13,19 @@ const Index = ({ auth, errors, users, column }) => {
     const data = users.map((user, key) => {
         user.created_at = moment().format("DD/MM/YYYY");
         last_seen[key] =
-            (moment().subtract(2, 'm').format('DD/MM/YYYY HH:mm') <
-                moment(user.last_seen).format('DD/MM/YYYY HH:mm') && (user.last_seen != null))
-                ? "online"
-                : "offline";
-        return user;
+            moment().subtract(1, "m").format("DD/MM/YYYY HH:mm") <
+                moment(user.last_seen).format("DD/MM/YYYY HH:mm") &&
+            user.last_seen != null ? (
+                <span className="text-green-400 gap-x-2 flex items-center justify-center">
+                    <RiRadioButtonLine />
+                    <p>متصل</p>
+                </span>
+            ) : (
+                <span className="text-red-400 gap-x-2 flex items-center justify-center">
+                    {moment(user.last_seen).fromNow()}
+                </span>
+            );
+        return { ...user, last_seen: last_seen[key] };
     });
     return (
         <Authenticated
