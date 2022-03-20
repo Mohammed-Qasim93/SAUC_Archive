@@ -34,26 +34,23 @@ export default function Authenticated({ auth, header, children }) {
 
                         <div className="hidden sm:flex sm:items-center sm:ml-6">
                             <div className=" justify-between  gap-x-2  flex">
-                                {auth.user.role == 1 ? (
-                                    <NavLink
-                                        href="/logs"
-                                        active={isActive("/logs")}
-                                    >
-                                        السجل
-                                    </NavLink>
-                                ) : null}
-                                {auth.user.role == 1 ? (
-                                    <NavLink
-                                        href={`/users`}
-                                        active={isActive("/users")}
-                                    >
-                                        المستخدمين
-                                    </NavLink>
-                                ) : null}
-                                <NavLink href={`/`} active={isActive("/")}>
-                                    لوحة التحكم
-                                </NavLink>
-                                {auth.user.role == 0 ? (
+                                {auth.user.role === "مدير" ? (
+                                    <>
+                                        <NavLink
+                                            href="/logs"
+                                            active={isActive("/logs")}
+                                        >
+                                            السجل
+                                        </NavLink>
+
+                                        <NavLink
+                                            href={`/users`}
+                                            active={isActive("/users")}
+                                        >
+                                            المستخدمين
+                                        </NavLink>
+                                    </>
+                                ) : (
                                     <>
                                         <NavLink
                                             href={"/sent"}
@@ -68,7 +65,10 @@ export default function Authenticated({ auth, header, children }) {
                                             الواردة
                                         </NavLink>
                                     </>
-                                ) : null}
+                                )}
+                                <NavLink href={`/`} active={isActive("/")}>
+                                    لوحة التحكم
+                                </NavLink>
                             </div>
                             <div className="ml-3 relative">
                                 <Dropdown>

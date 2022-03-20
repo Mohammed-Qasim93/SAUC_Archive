@@ -2,13 +2,17 @@ import React from "react";
 import Table from "@/Components/Table";
 import Authenticated from "@/Layouts/Authenticated";
 import { Link } from "@inertiajs/inertia-react";
-import { BiAddItem } from "react-icons/bi";
 import { AiOutlineUserAdd } from "react-icons/ai";
+import moment from "moment";
+import "moment/locale/ar-kw";
 
 const Index = ({ auth, errors, users, column }) => {
-    console.log(users);
-
     const cols = Object.keys(column);
+    const data = users.map((user) => {
+        user.created_at = moment().format("DD/MM/YYYY");
+        user.last_seen = moment().fromNow();
+        return user;
+    });
     return (
         <Authenticated
             auth={auth}
@@ -31,10 +35,10 @@ const Index = ({ auth, errors, users, column }) => {
                                 <AiOutlineUserAdd className="bg-inherit" />
                             </Link>
                         </div>
-                        {auth.user.role == 1 ? (
+                        {auth.user.role == "مدير" ? (
                             <div className="col-span-2 mt-10">
                                 <Table
-                                    data={users}
+                                    data={data}
                                     cols={cols}
                                     arabicCols={column}
                                     paginate
