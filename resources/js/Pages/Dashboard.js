@@ -31,6 +31,7 @@ export default function Dashboard({ auth, errors }) {
                 </h2>
             }
         >
+            <Head title="لوحة التحكم" />
             <div className="py-12">
                 <div className="max-w-7xl mx-auto sm:px-6  lg:px-8">
                     <div className="bg-white py-4 gap-4 px-4 grid grid-cols-2 items-center justify-center overflow-hidden shadow-sm sm:rounded-lg">
