@@ -4,9 +4,9 @@ namespace App\Http\Middleware;
 
 use App\Models\User;
 use Closure;
-use Illuminate\Filesystem\Cache;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache as FacadesCache;
 
 class UserActivity
 {
@@ -21,7 +21,7 @@ class UserActivity
     {
         if(Auth::check()){
             $expiresAt = now()->addMinutes(2);
-            Cache::put('user-is-online-'.auth()->user()->id, true, $expiresAt);
+            FacadesCache::put('user-is-online-'.auth()->user()->id, true, $expiresAt);
             User::where('id', auth()->user()->id)->update(['last_seen' => now()]);
         }
         return $next($request);
