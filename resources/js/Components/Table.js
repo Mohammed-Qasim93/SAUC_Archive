@@ -132,7 +132,7 @@ const ReactTable = ({ data, cols, arabicCols, paginate }) => {
                                     return (
                                         <td
                                             {...cell.getCellProps()}
-                                            className="p-3   text-center"
+                                            className="p-3  text-center"
                                             key={index}
                                         >
                                             {cell.render("Cell")}
@@ -144,7 +144,7 @@ const ReactTable = ({ data, cols, arabicCols, paginate }) => {
                     })}
                 </tbody>
             </table>
-            {paginate && (
+            {paginate && data.length > 10 && (
                 <div className="max-w-2xl mt-8">
                     <div className="flex justify-between flex-row-reverse items-center">
                         <span>
