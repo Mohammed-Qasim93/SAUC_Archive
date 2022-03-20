@@ -29,10 +29,12 @@ Route::middleware('admin')->group(function () {
     Route::put('users/update', [Controller::class, 'update']);
     Route::delete('users/delete', [Controller::class, 'delete']);
     
-    Route::get('index', [BooksController::class, 'index'])->name('books.index');
-    Route::get('create', [BooksController::class, 'create'])->name('books.create');
-    Route::put('up', [BooksController::class, 'update'])->name('books.update');
-    Route::post('store', [BooksController::class, 'store'])->name('books.store');
-    Route::delete('delete', [BooksController::class, 'delete'])->name('books.delete');
+    Route::get('export', [BooksController::class, 'export'])->name('books.export');
+    Route::get('import', [BooksController::class, 'import'])->name('books.import');
+    Route::get('export/show/{id}', [BooksController::class, 'exshow']);
+    Route::put('export/update/{id}', [BooksController::class, 'exupdate']);
+    Route::get('import/show/{id}', [BooksController::class, 'imshow']);
+    Route::put('import/update/{id}', [BooksController::class, 'imupdate']);
+    Route::delete('delete/{id}', [BooksController::class, 'delete'])->name('books.delete');
 });
 

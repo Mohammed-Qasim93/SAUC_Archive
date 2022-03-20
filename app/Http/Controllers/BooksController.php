@@ -7,7 +7,12 @@ use Inertia\Inertia;
 
 class BooksController extends Controller
 {
-    public function index(){
+    public function export(){
+        return Inertia::render('Books/Index', [
+            'books' => Books::all(),
+        ]);
+    }
+    public function import(){
         return Inertia::render('Books/Index', [
             'books' => Books::all(),
         ]);
