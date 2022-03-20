@@ -47,6 +47,7 @@ export default function Dashboard({ auth, errors }) {
                                 );
                             })}
                         </div>
+
                         {auth.user.role == 0 ? (
                             <div className="col-span-2 mt-10">
                                 <p className="text-center text-muted text-xl">
