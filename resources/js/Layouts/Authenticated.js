@@ -53,14 +53,14 @@ export default function Authenticated({ auth, header, children }) {
                                 ) : (
                                     <>
                                         <NavLink
-                                            href={"/sent"}
-                                            active={isActive("/sent")}
+                                            href={"/export"}
+                                            active={isActive("/export")}
                                         >
                                             الصادره
                                         </NavLink>
                                         <NavLink
-                                            href={`/received`}
-                                            active={isActive("/received")}
+                                            href={`/import`}
+                                            active={isActive("/import")}
                                         >
                                             الواردة
                                         </NavLink>
@@ -165,14 +165,14 @@ export default function Authenticated({ auth, header, children }) {
                         {auth.user.role == 0 ? (
                             <>
                                 <ResponsiveNavLink
-                                    href={`/sent`}
-                                    active={isActive("/sent")}
+                                    href={`/export`}
+                                    active={isActive("/export")}
                                 >
                                     الصادره
                                 </ResponsiveNavLink>
                                 <ResponsiveNavLink
-                                    href={`/received`}
-                                    active={isActive("/received")}
+                                    href={`/import`}
+                                    active={isActive("/import")}
                                 >
                                     الواردة
                                 </ResponsiveNavLink>

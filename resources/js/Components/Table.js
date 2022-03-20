@@ -22,31 +22,31 @@ const ReactTable = ({ data, cols, arabicCols, paginate }) => {
         return index >= 1 === 0;
     };
 
-    // const tableHooks = (hooks) => {
-    //     hooks.visibleColumns.push((columns) => [
-    //         ...columns,
-    //         {
-    //             id: "edit",
-    //             Header: "edit",
-    //             Cell: ({ row }) => (
-    //                 <BiEdit
-    //                     className="bg-green-400 hover:bg-green-500 text-slate-200 w-8 h-8 p-1 rounded-md cursor-pointer "
-    //                     onClick={() => alert(row.values.id)}
-    //                 />
-    //             ),
-    //         },
-    //         {
-    //             id: "delete",
-    //             Header: "delete",
-    //             Cell: ({ row }) => (
-    //                 <BiTrash
-    //                     className="bg-red-400 hover:bg-red-500 text-slate-200 w-8 h-8 p-1 rounded-md cursor-pointer "
-    //                     onClick={() => alert(row.values.id)}
-    //                 />
-    //             ),
-    //         },
-    //     ]);
-    // };
+    const tableHooks = (hooks) => {
+        hooks.visibleColumns.push((columns) => [
+            ...columns,
+            {
+                id: "edit",
+                Header: "تعديل",
+                Cell: ({ row }) => (
+                    <BiEdit
+                        className="bg-green-400  mx-auto hover:bg-green-500 text-slate-200 w-8 h-8 p-1 rounded-md cursor-pointer "
+                        onClick={() => alert(row.values.id)}
+                    />
+                ),
+            },
+            {
+                id: "delete",
+                Header: "حذف",
+                Cell: ({ row }) => (
+                    <BiTrash
+                        className="bg-red-400 mx-auto hover:bg-red-500 text-slate-200 w-8 h-8 p-1 rounded-md cursor-pointer "
+                        onClick={() => alert(row.values.id)}
+                    />
+                ),
+            },
+        ]);
+    };
 
     const {
         getTableProps,
@@ -66,6 +66,7 @@ const ReactTable = ({ data, cols, arabicCols, paginate }) => {
         state,
     } = useTable(
         { columns: columns, data: data },
+        tableHooks,
         // useGlobalFilter,
         useSortBy,
         usePagination
