@@ -21,14 +21,7 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
-});
 
-Route::middleware('admin')->group(function () {
-    Route::get('users', [Controller::class, 'index'])->name('users.index');
-    Route::get('users/edit', [Controller::class, 'edit'])->name('users.edit');
-    Route::put('users/update', [Controller::class, 'update']);
-    Route::delete('users/delete', [Controller::class, 'delete']);
-    
     Route::get('export', [BooksController::class, 'export'])->name('books.export');
     Route::get('import', [BooksController::class, 'import'])->name('books.import');
     Route::get('export/show/{id}', [BooksController::class, 'exshow']);
@@ -36,5 +29,12 @@ Route::middleware('admin')->group(function () {
     Route::get('import/show/{id}', [BooksController::class, 'imshow']);
     Route::put('import/update/{id}', [BooksController::class, 'imupdate']);
     Route::delete('delete/{id}', [BooksController::class, 'delete'])->name('books.delete');
+});
+
+Route::middleware('admin')->group(function () {
+    Route::get('users', [Controller::class, 'index'])->name('users.index');
+    Route::get('users/edit', [Controller::class, 'edit'])->name('users.edit');
+    Route::put('users/update', [Controller::class, 'update']);
+    Route::delete('users/delete', [Controller::class, 'delete']);
 });
 
