@@ -35,9 +35,9 @@ class Controller extends BaseController
                 $request->validate([
                     'name' => 'required|string|unique:users,name',
                 ],[
-                    'name.required' => 'يجب ادخال اسم المستخدم',
-                    'name.string' => 'اسم المستخدم غير صالح',
-                    'name.unique' => 'اسم المستخدم موجود فعلاً',
+                    'name.required' => 'يجب ادخال الاسم',
+                    'name.string' => 'الاسم غير صالح',
+                    'name.unique' => 'الاسم موجود فعلاً',
                 ]);
             }
             if($request->password !== null){
@@ -50,9 +50,10 @@ class Controller extends BaseController
             }
             if($request->role !== $user->role){
                 $request->validate([
-                    'role' => 'nullable|integer',
+                    'role' => 'required|string',
                 ],[
-                    'role.integer' => 'صلاحية المستخدم غير صالحة',
+                    'role.required' => 'يجب تحديد الحالة',
+                    'role.string' => 'الصلاحية غير صحيحة',
                 ]);
             }
             $user->update([
@@ -60,7 +61,7 @@ class Controller extends BaseController
                 'password' => bcrypt($request->password),
                 'role' => $request->role,
             ]);
-            return Redirect::route('users.index')->with('success', ['icon' => 'success' ,'title' => 'نجحت العملية', 'message' => 'تم تعديل بيانات المستخدم']);
+            return Redirect::route('users.index')->with('success', ['icon' => 'success' ,'title' => 'نجحت العملية', 'message' => 'تم التعديل']);
         }
         return Redirect::back();
     }
@@ -68,6 +69,6 @@ class Controller extends BaseController
     public function delete($id){
         $user = User::findOrFail($id);
         $user->delete();
-        return Redirect::route('users.index')->with('success', ['icon' => 'success' ,'title' => 'نجحت العملية', 'message' => 'تم حذف المستخدم']);
+        return Redirect::route('users.index')->with('success', ['icon' => 'success' ,'title' => 'نجحت العملية', 'message' => 'تم الحذف']);
     }
 }

@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->integer('exid')->nullable();
             $table->string('name');
             $table->string('password');
-            $table->integer('role')->default(0);
+            $table->string('role');
             $table->rememberToken();
             $table->timestamps();
         });

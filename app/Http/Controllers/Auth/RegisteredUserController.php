@@ -37,12 +37,15 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => 'required|string|max:25',
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'role' => 'required|string',
         ],[
-            'name.required' => 'يجب ادخال اسم المستخدم',
-            'name.string' => 'اسم المستخدم غير صالح',
-            'name.max' => 'اسم المستخدم يجب ان لا يزيد عن 25 حرف',
+            'name.required' => 'يجب ادخال الاسم',
+            'name.string' => 'الاسم غير صالح',
+            'name.max' => 'الاسم يجب ان لا يزيد عن 25 حرف',
             'password.required' => 'يجب ادخال كلمة المرور',
             'password.confirmed' => 'كلمة المرور غير متطابقة',
+            'role.required' => 'يجب تحديد الحالة',
+            'role.string' => 'الصلاحية غير صحيحة',
         ]);
 
         $user = User::create([
@@ -54,6 +57,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect(RouteServiceProvider::HOME)->with('success', ['icon' => 'success' ,'title' => 'نجحت العملية', 'message' => 'تمت الاضافة']);;
     }
 }
