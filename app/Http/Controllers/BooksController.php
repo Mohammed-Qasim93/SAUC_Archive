@@ -10,12 +10,12 @@ class BooksController extends Controller
 {
     public function export(){
         return Inertia::render('Books/Index', [
-            'books' => Books::all(),
+            'books' => Books::where('status', 'صادر')->get(),
         ]);
     }
     public function import(){
         return Inertia::render('Books/Index', [
-            'books' => Books::all(),
+            'books' => Books::where('status', 'وارد')->get(),
         ]);
     }
 
