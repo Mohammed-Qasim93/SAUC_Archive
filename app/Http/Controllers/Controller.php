@@ -56,7 +56,7 @@ class Controller extends BaseController
                     'role.string' => 'الصلاحية غير صحيحة',
                 ]);
             }
-            $user->update([
+            $user->uupdate([
                 'name' => $request->name,
                 'password' => bcrypt($request->password),
                 'role' => $request->role,

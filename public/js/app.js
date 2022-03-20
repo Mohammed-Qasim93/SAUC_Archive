@@ -3506,6 +3506,36 @@ function Register() {
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Books/Create.js":
+/*!********************************************!*\
+  !*** ./resources/js/Pages/Books/Create.js ***!
+  \********************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Books/Edit.js":
+/*!******************************************!*\
+  !*** ./resources/js/Pages/Books/Edit.js ***!
+  \******************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Books/Index.js":
+/*!*******************************************!*\
+  !*** ./resources/js/Pages/Books/Index.js ***!
+  \*******************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Dashboard.js":
 /*!*****************************************!*\
   !*** ./resources/js/Pages/Dashboard.js ***!
@@ -3589,36 +3619,6 @@ function Dashboard(_ref) {
     })
   });
 }
-
-/***/ }),
-
-/***/ "./resources/js/Pages/Units/Create.js":
-/*!********************************************!*\
-  !*** ./resources/js/Pages/Units/Create.js ***!
-  \********************************************/
-/***/ (() => {
-
-
-
-/***/ }),
-
-/***/ "./resources/js/Pages/Units/Edit.js":
-/*!******************************************!*\
-  !*** ./resources/js/Pages/Units/Edit.js ***!
-  \******************************************/
-/***/ (() => {
-
-
-
-/***/ }),
-
-/***/ "./resources/js/Pages/Units/Index.js":
-/*!*******************************************!*\
-  !*** ./resources/js/Pages/Units/Index.js ***!
-  \*******************************************/
-/***/ (() => {
-
-
 
 /***/ }),
 
@@ -92056,14 +92056,14 @@ var map = {
 	"./Auth/Login.js": "./resources/js/Pages/Auth/Login.js",
 	"./Auth/Register": "./resources/js/Pages/Auth/Register.js",
 	"./Auth/Register.js": "./resources/js/Pages/Auth/Register.js",
+	"./Books/Create": "./resources/js/Pages/Books/Create.js",
+	"./Books/Create.js": "./resources/js/Pages/Books/Create.js",
+	"./Books/Edit": "./resources/js/Pages/Books/Edit.js",
+	"./Books/Edit.js": "./resources/js/Pages/Books/Edit.js",
+	"./Books/Index": "./resources/js/Pages/Books/Index.js",
+	"./Books/Index.js": "./resources/js/Pages/Books/Index.js",
 	"./Dashboard": "./resources/js/Pages/Dashboard.js",
-	"./Dashboard.js": "./resources/js/Pages/Dashboard.js",
-	"./Units/Create": "./resources/js/Pages/Units/Create.js",
-	"./Units/Create.js": "./resources/js/Pages/Units/Create.js",
-	"./Units/Edit": "./resources/js/Pages/Units/Edit.js",
-	"./Units/Edit.js": "./resources/js/Pages/Units/Edit.js",
-	"./Units/Index": "./resources/js/Pages/Units/Index.js",
-	"./Units/Index.js": "./resources/js/Pages/Units/Index.js"
+	"./Dashboard.js": "./resources/js/Pages/Dashboard.js"
 };
 
 

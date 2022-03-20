@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\BooksController;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
@@ -27,5 +28,11 @@ Route::middleware('admin')->group(function () {
     Route::get('users/edit', [Controller::class, 'edit'])->name('users.edit');
     Route::put('users/update', [Controller::class, 'update']);
     Route::delete('users/delete', [Controller::class, 'delete']);
+    
+    Route::get('index', [BooksController::class, 'index'])->name('books.index');
+    Route::get('create', [BooksController::class, 'create'])->name('books.create');
+    Route::put('up', [BooksController::class, 'update'])->name('books.update');
+    Route::post('store', [BooksController::class, 'store'])->name('books.store');
+    Route::delete('delete', [BooksController::class, 'delete'])->name('books.delete');
 });
 
