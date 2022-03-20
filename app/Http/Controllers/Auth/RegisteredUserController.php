@@ -56,7 +56,7 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        Auth::login($user);
+        // Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME)->with('success', ['icon' => 'success' ,'title' => 'نجحت العملية', 'message' => 'تمت الاضافة']);;
     }

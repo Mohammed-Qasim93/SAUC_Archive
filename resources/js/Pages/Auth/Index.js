@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Table from "@/Components/Table";
 import Authenticated from "@/Layouts/Authenticated";
 import { Link } from "@inertiajs/inertia-react";
@@ -8,16 +8,16 @@ import "moment/locale/ar-kw";
 
 const Index = ({ auth, errors, users, column }) => {
     const cols = Object.keys(column);
-    const data = users.map((user) => {
+    let last_seen = [];
+    const data = users.map((user, key) => {
         user.created_at = moment().format("DD/MM/YYYY");
-        user.last_seen =
-            moment().minutes() <
-            new Date().setMinutes(new Date().getMinutes() - 2)
+        last_seen[key] =
+            (moment().subtract(2, 'm').format('DD/MM/YYYY HH:mm') <
+                moment(user.last_seen).format('DD/MM/YYYY HH:mm') && (user.last_seen != null))
                 ? "online"
                 : "offline";
         return user;
     });
-    console.log(data);
     return (
         <Authenticated
             auth={auth}

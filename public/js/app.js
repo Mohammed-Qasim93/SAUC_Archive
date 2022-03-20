@@ -3214,12 +3214,12 @@ var Index = function Index(_ref) {
       users = _ref.users,
       column = _ref.column;
   var cols = Object.keys(column);
-  var data = users.map(function (user) {
+  var last_seen = [];
+  var data = users.map(function (user, key) {
     user.created_at = moment__WEBPACK_IMPORTED_MODULE_4___default()().format("DD/MM/YYYY");
-    user.last_seen = moment__WEBPACK_IMPORTED_MODULE_4___default()().minutes() < new Date().setMinutes(new Date().getMinutes() - 2) ? "online" : "offline";
+    last_seen[key] = moment__WEBPACK_IMPORTED_MODULE_4___default()().subtract(2, 'm').format('DD/MM/YYYY HH:mm') < moment__WEBPACK_IMPORTED_MODULE_4___default()(user.last_seen).format('DD/MM/YYYY HH:mm') && user.last_seen != null ? "online" : "offline";
     return user;
   });
-  console.log(data);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_2__["default"], {
     auth: auth,
     errors: errors,
