@@ -2230,6 +2230,59 @@ function Checkbox(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/Components/Combo.js":
+/*!******************************************!*\
+  !*** ./resources/js/Components/Combo.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Button)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Label__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Label */ "./resources/js/Components/Label.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+function Button(_ref) {
+  var name = _ref.name,
+      options = _ref.options,
+      handleChange = _ref.handleChange,
+      className = _ref.className,
+      value = _ref.value,
+      disabled = _ref.disabled,
+      placeholder = _ref.placeholder,
+      add = _ref.add;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "flex flex-col items-center justify-center",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("select", {
+      disabled: disabled,
+      className: className,
+      name: name,
+      onChange: handleChange,
+      defaultValue: placeholder,
+      children: [add && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+        disabled: true,
+        className: "disabled:bg-transparent",
+        children: placeholder
+      }), options.map(function (option, index) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+          className: "w-full text-base bg-transparent",
+          value: option.name,
+          label: option.name,
+          children: option.name
+        }, index);
+      })]
+    })
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/Components/Dropdown.js":
 /*!*********************************************!*\
   !*** ./resources/js/Components/Dropdown.js ***!
@@ -2407,6 +2460,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var formItem = function formItem(_ref) {
   var name = _ref.name,
       type = _ref.type,
@@ -2414,22 +2468,25 @@ var formItem = function formItem(_ref) {
       forInput = _ref.forInput,
       label = _ref.label,
       required = _ref.required,
-      handleChange = _ref.handleChange;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      handleChange = _ref.handleChange,
+      children = _ref.children;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
     className: "relative z-0 mb-6 w-full group",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      type: type,
-      name: name,
-      id: name,
-      className: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary-default focus:outline-none focus:ring-0 focus:border-dark peer",
-      required: required,
-      placeholder: placeholder,
-      handleChange: handleChange
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Label__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      forHtml: forInput,
-      value: label,
-      className: "absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-right peer-focus:right-0 peer-focus:text-primary-dark peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 opacity-50 peer-focus:scale-75 peer-focus:-translate-y-6"
-    })]
+    children: children ? children : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+      children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        type: type,
+        name: name,
+        id: name,
+        className: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary-default focus:outline-none focus:ring-0 focus:border-dark peer",
+        required: required,
+        placeholder: placeholder,
+        handleChange: handleChange
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Label__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        forHtml: forInput,
+        value: label,
+        className: "absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-right peer-focus:right-0 peer-focus:text-primary-dark peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 opacity-50 peer-focus:scale-75 peer-focus:-translate-y-6"
+      })]
+    })
   });
 };
 
@@ -3249,14 +3306,6 @@ function Login(_ref) {
     setData(event.target.name, event.target.type === "checkbox" ? event.target.checked : event.target.value);
   };
 
-  var onHandleChange = function onHandleChange(event) {
-    setData(event.target.name, event.target.type === "checkbox" ? event.target.checked : event.target.value);
-  };
-
-  var handleClick = function handleClick() {
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.get("/register");
-  };
-
   var submit = function submit(e) {
     e.preventDefault();
     post(route("login"));
@@ -3293,24 +3342,19 @@ function Login(_ref) {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Checkbox__WEBPACK_IMPORTED_MODULE_3__["default"], {
             name: "remember",
             value: data.remember,
-            handleChange: onHandleChange
+            handleChange: handleChange
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
             className: "mr-2 text-sm font-tajawal-light font-bold text-gray-600",
             children: "\u062A\u0630\u0643\u0631\u0646\u064A"
           })]
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "flex items-center justify-around mt-4",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+        className: "flex items-center justify-end mt-4",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
           primary: true,
           processing: processing,
           children: "\u062F\u062E\u0648\u0644"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          type: "button",
-          handleClick: handleClick,
-          processing: processing,
-          children: "\u0625\u0646\u0634\u0627\u0621 \u062D\u0633\u0627\u0628"
-        })]
+        })
       })]
     })]
   });
@@ -3336,7 +3380,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_ValidationErrors__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/ValidationErrors */ "./resources/js/Components/ValidationErrors.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Components_Combo__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Components/Combo */ "./resources/js/Components/Combo.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -3349,7 +3395,7 @@ __webpack_require__.r(__webpack_exports__);
 function Register() {
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.useForm)({
     name: "",
-    email: "",
+    role: "",
     password: "",
     password_confirmation: ""
   }),
@@ -3366,7 +3412,7 @@ function Register() {
     };
   }, []);
 
-  var handleChange = function handleChange(event) {
+  var _handleChange = function handleChange(event) {
     setData(event.target.name, event.target.type === "checkbox" ? event.target.checked : event.target.value);
   };
 
@@ -3374,49 +3420,69 @@ function Register() {
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.get("/");
   };
 
+  var roles = [{
+    name: "قسم"
+  }, {
+    name: "وحدة"
+  }, {
+    name: "مدير"
+  }];
+
   var submit = function submit(e) {
     e.preventDefault();
     post(route("register"));
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_Layouts_Guest__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.Head, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_Layouts_Guest__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.Head, {
       title: "\u0625\u0636\u0627\u0641\u0629 \u0645\u0633\u062A\u062E\u062F\u0645"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_ValidationErrors__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_ValidationErrors__WEBPACK_IMPORTED_MODULE_4__["default"], {
       errors: errors
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("form", {
       onSubmit: submit,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_FormItem__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_FormItem__WEBPACK_IMPORTED_MODULE_3__["default"], {
         name: "name",
         type: "text",
         label: "\u0627\u0644\u0627\u0633\u0645",
         forInput: "name",
         required: true,
         placeholder: " ",
-        handleChange: handleChange
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_FormItem__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        handleChange: _handleChange
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_FormItem__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        label: "\u0627\u0644\u0635\u0644\u0627\u062D\u064A\u0629",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Combo__WEBPACK_IMPORTED_MODULE_7__["default"], {
+          className: "block w-full text-sm text-gray-400 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary-default focus:outline-none focus:ring-0 font-semibold focus:border-dark peer",
+          name: "role",
+          placeholder: "اختر الصلاحية",
+          add: true,
+          options: roles,
+          handleChange: function handleChange(e) {
+            _handleChange(e);
+          }
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_FormItem__WEBPACK_IMPORTED_MODULE_3__["default"], {
         name: "password",
         type: "password",
         label: "\u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631",
         forInput: "password",
         required: true,
         placeholder: " ",
-        handleChange: handleChange
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_FormItem__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        handleChange: _handleChange
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_FormItem__WEBPACK_IMPORTED_MODULE_3__["default"], {
         name: "password_confirmation",
         type: "password",
         label: "\u062A\u0623\u0643\u064A\u062F \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631",
         forInput: "password_confirmation",
         required: true,
         placeholder: " ",
-        handleChange: handleChange
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        handleChange: _handleChange
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: "flex items-center justify-around mt-4",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
           primary: true,
           processing: processing,
           children: "\u0627\u0636\u0627\u0641\u0629"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
           type: "button",
           handleClick: handleClick,
           children: "\u0631\u062C\u0648\u0639"

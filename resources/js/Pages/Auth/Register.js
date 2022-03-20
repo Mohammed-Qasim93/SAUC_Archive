@@ -5,11 +5,12 @@ import FormItem from "@/Components/FormItem";
 import ValidationErrors from "@/Components/ValidationErrors";
 import { Head, Link, useForm } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
+import Combo from "@/Components/Combo";
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
         name: "",
-        email: "",
+        role: "",
         password: "",
         password_confirmation: "",
     });
@@ -33,6 +34,18 @@ export default function Register() {
         Inertia.get("/");
     };
 
+    const roles = [
+        {
+            name: "قسم",
+        },
+        {
+            name: "وحدة",
+        },
+        {
+            name: "مدير",
+        },
+    ];
+
     const submit = (e) => {
         e.preventDefault();
 
@@ -53,6 +66,20 @@ export default function Register() {
                     placeholder=" "
                     handleChange={handleChange}
                 />
+                <FormItem label="الصلاحية">
+                    <Combo
+                        className={
+                            "block w-full text-sm text-gray-400 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary-default focus:outline-none focus:ring-0 font-semibold focus:border-dark peer"
+                        }
+                        name="role"
+                        placeholder={"اختر الصلاحية"}
+                        add
+                        options={roles}
+                        handleChange={(e) => {
+                            handleChange(e);
+                        }}
+                    />
+                </FormItem>
                 <FormItem
                     name="password"
                     type="password"

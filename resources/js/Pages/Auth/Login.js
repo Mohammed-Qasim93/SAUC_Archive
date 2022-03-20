@@ -28,18 +28,6 @@ export default function Login({ status }) {
                 : event.target.value
         );
     };
-    const onHandleChange = (event) => {
-        setData(
-            event.target.name,
-            event.target.type === "checkbox"
-                ? event.target.checked
-                : event.target.value
-        );
-    };
-
-    const handleClick = () => {
-        Inertia.get("/register");
-    };
 
     const submit = (e) => {
         e.preventDefault();
@@ -83,7 +71,7 @@ export default function Login({ status }) {
                         <Checkbox
                             name="remember"
                             value={data.remember}
-                            handleChange={onHandleChange}
+                            handleChange={handleChange}
                         />
 
                         <span className="mr-2 text-sm font-tajawal-light font-bold text-gray-600">
@@ -92,16 +80,9 @@ export default function Login({ status }) {
                     </label>
                 </div>
 
-                <div className="flex items-center justify-around mt-4">
+                <div className="flex items-center justify-end mt-4">
                     <Button primary processing={processing}>
                         دخول
-                    </Button>
-                    <Button
-                        type="button"
-                        handleClick={handleClick}
-                        processing={processing}
-                    >
-                        إنشاء حساب
                     </Button>
                 </div>
             </form>
