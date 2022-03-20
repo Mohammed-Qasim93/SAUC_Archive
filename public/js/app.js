@@ -2743,7 +2743,7 @@ var ReactTable = function ReactTable(_ref) {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table", _objectSpread(_objectSpread({}, getTableProps()), {}, {
       className: "rounded-t-lg overflow-hidden mx-auto w-full text-center",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead", {
-        className: "bg-dark text-default capitalize",
+        className: "bg-muted text-default capitalize",
         children: headerGroups.map(function (headerGroup, i) {
           return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("tr", _objectSpread(_objectSpread({}, headerGroup.getHeaderGroupProps()), {}, {
             key: i,
@@ -2769,7 +2769,7 @@ var ReactTable = function ReactTable(_ref) {
           prepareRow(row);
           return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("tr", _objectSpread(_objectSpread({}, row.getRowProps()), {}, {
             key: i,
-            className: " text-center bg-muted  text-secondary-default "
+            className: " text-center bg-default  text-muted "
           }), row.cells.map(function (cell, index) {
             return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", _objectSpread(_objectSpread({}, cell.getCellProps()), {}, {
               className: "p-3  text-center",

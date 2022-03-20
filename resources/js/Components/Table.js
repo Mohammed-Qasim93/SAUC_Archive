@@ -83,7 +83,7 @@ const ReactTable = ({ data, cols, arabicCols, paginate }) => {
                 {...getTableProps()}
                 className="rounded-t-lg overflow-hidden mx-auto w-full text-center"
             >
-                <thead className="bg-dark text-default capitalize">
+                <thead className="bg-muted text-default capitalize">
                     {headerGroups.map((headerGroup, i) => (
                         <tr
                             {...headerGroup.getHeaderGroupProps()}
@@ -126,7 +126,7 @@ const ReactTable = ({ data, cols, arabicCols, paginate }) => {
                             <tr
                                 {...row.getRowProps()}
                                 key={i}
-                                className={` text-center bg-muted  text-secondary-default `}
+                                className={` text-center bg-default  text-muted `}
                             >
                                 {row.cells.map((cell, index) => {
                                     return (
