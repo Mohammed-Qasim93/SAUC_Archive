@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -37,4 +38,8 @@ class User extends Authenticatable
     public function books(){
         return $this->belongsToMany(Books::class);
     }
+
+    // protected $casts = [
+    //     'created_at' => "datetime:Y-m-d\TH:iPZ",
+    // ];
 }
