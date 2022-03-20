@@ -23,7 +23,10 @@ const Index = ({ auth, errors, users, column }) => {
                 <div className="max-w-7xl mx-auto sm:px-6  lg:px-8">
                     <div className="bg-white py-4 gap-4 px-4 grid grid-cols-2 items-center justify-center overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="col-span-1 px-2">
-                            <Link className="w-fit flex items-center gap-x-4 px-4 py-2 rounded-md bg-primary-default hover:bg-primary-dark text-muted">
+                            <Link
+                                href="/register"
+                                className="w-fit flex items-center gap-x-4 px-4 py-2 rounded-md bg-primary-default hover:bg-primary-dark text-muted"
+                            >
                                 <span>إضافة مستخدم</span>
                                 <AiOutlineUserAdd className="bg-inherit" />
                             </Link>
